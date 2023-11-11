@@ -27,7 +27,7 @@ public class ServerThread extends Thread {
                 BufferedReader reader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))
             ){
 
-            System.out.println("Client " + clientSocket.getLocalAddress() +  " n° " + num + " connecté");
+            System.out.println("Client " + clientSocket.getInetAddress() +  " n° " + num + " connecté");
             writer.println("Veuillez devinez le nombre secret [1 , 100] : \n");
 
             String s;
@@ -36,7 +36,7 @@ public class ServerThread extends Thread {
             {
                 int number = Integer.parseInt(s);
 
-                System.out.println("Client " + clientSocket.getLocalAddress() +  " n° " + num +  " a ecrit : " + number);
+                System.out.println("Client " + clientSocket.getInetAddress() +  " n° " + num +  " a ecrit : " + number);
 
                 if (number < serverSecretNumber)
                 {
