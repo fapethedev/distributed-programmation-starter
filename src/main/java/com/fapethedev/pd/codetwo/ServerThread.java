@@ -24,7 +24,7 @@ public class ServerThread extends Thread {
         super.run();
         try(
                 PrintWriter writer = new PrintWriter(clientSocket.getOutputStream(), true);
-                BufferedReader reader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+                BufferedReader reader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))
             ){
 
             System.out.println("Client " + clientSocket.getLocalAddress() +  " n° " + num + " connecté");
@@ -57,6 +57,7 @@ public class ServerThread extends Thread {
                 }
             }
             System.out.println("Fermeture de la connexion.");
+            System.exit(0);
         }
         catch (IOException e)
         {
