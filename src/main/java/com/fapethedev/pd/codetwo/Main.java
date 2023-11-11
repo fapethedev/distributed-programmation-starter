@@ -9,9 +9,9 @@ public class Main
 {
     public static void main(String[] args)
     {
-        int secret = new Random().nextInt(1, 101);
+        Integer secret = new Random().nextInt(1, 101);
         System.out.println("Serveur démarré");
-        System.out.println("Devinette du nombre secret " + secret);
+//        System.out.println("Devinette du nombre secret " + Integer.toOctalString(secret));
 
         try(ServerSocket serverSocket = new ServerSocket(6668))
         {
